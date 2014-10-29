@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5.0" method="upgrade">
+ 
+        <name>com_moufla</name>
+        <!-- The following elements are optional and free of formatting constraints -->
+        <creationDate>October 2014</creationDate>
+        <author>Van Der Putte Guillaume</author>
+        <authorEmail>g.vanderputte@thecodingmachine.com</authorEmail>
+        <authorUrl>http://mouf-php.com/</authorUrl>
+        <copyright>Copyright Info</copyright>
+        <license>License Info</license>
+        <!--  The version string is recorded in the components table -->
+        <version>1.0</version>
+        <!-- The description is optional and defaults to the name -->
+        <description>Description of the Moufla component ...</description>
+        <files>
+            <filename>index.html</filename>
+            <filename>moufla.php</filename>
+            <filename>controller.php</filename>
+            <folder>views</folder>
+        </files>
+</extension>
