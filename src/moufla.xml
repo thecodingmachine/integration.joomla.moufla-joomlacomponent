@@ -19,4 +19,8 @@
             <filename>controller.php</filename>
             <folder>views</folder>
         </files>
+        <administration>
+                <!-- Administration Menu Section -->
+                <menu>Moufla!</menu>
+        </administration>
 </extension>
