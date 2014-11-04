@@ -15,16 +15,17 @@ class MouflaViewMoufla extends JView
 {
     // Overwriting JView display method
     function display($tpl = null) {
-        // Assign data to the view
-/*      $this->msg = 'This is mouflaaaa !';
-        $this->id = $input->get("id");
-        $this->desc = $input->get("desc");*/
-        // Display the view
-        //parent::display($tpl);
-
         // Let's get the response of Mouf through the Joomla's input
         $input = JFactory::getApplication()->input;
         $htmlResponse = $input->getRaw("response");
         $htmlResponse->sendContent();
+
+        // If the request was a Json Request, you should kill the app
+        // TODO find a better way ?
+        if (!is_null($input->get("mouflaJson"))
+            && $input->get("mouflaJson") == "true") {
+            $app = JFactory::getApplication();
+            $app->close();
+        }
     }
 }
