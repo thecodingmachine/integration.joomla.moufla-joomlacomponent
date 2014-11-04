@@ -1,4 +1,7 @@
 <?php
+
+use Symfony\Component\HttpFoundation\Response;
+
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
 
@@ -11,19 +14,17 @@ jimport('joomla.application.component.view');
 class MouflaViewMoufla extends JView
 {
     // Overwriting JView display method
-    function display($tpl = null)
-    {
-        var_dump("--Je suis dans le display de la view--");
-        $input = JFactory::getApplication()->input;
-
+    function display($tpl = null) {
         // Assign data to the view
-        $this->msg = 'This is mouflaaaa !';
+/*      $this->msg = 'This is mouflaaaa !';
         $this->id = $input->get("id");
-        $this->desc = $input->get("desc");
-
+        $this->desc = $input->get("desc");*/
         // Display the view
         //parent::display($tpl);
 
-       echo "le test de la mort qui tue, c'est la ?";
+        // Let's get the response of Mouf through the Joomla's input
+        $input = JFactory::getApplication()->input;
+        $htmlResponse = $input->getRaw("response");
+        $htmlResponse->sendContent();
     }
 }
