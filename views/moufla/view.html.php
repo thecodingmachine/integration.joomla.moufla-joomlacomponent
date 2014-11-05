@@ -21,7 +21,6 @@ class MouflaViewMoufla extends JView
         $htmlResponse->sendContent();
 
         // If the request was a Json Request, you should kill the app
-        // TODO find a better way ?
         if (!is_null($input->get("mouflaJson"))
             && $input->get("mouflaJson") == "true") {
             $app = JFactory::getApplication();
