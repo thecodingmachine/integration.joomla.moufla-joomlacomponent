@@ -9,7 +9,7 @@ jimport('joomla.application.component.controller');
 /**
  * Moufla Component Controller
  */
-class MouflaController extends JController {
+class MouflaController extends JControllerLegacy {
 
     public function display($cachable = false, $urlparams = false) {
         parent::display();

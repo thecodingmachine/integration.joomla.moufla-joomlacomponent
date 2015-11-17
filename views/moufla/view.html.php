@@ -9,9 +9,9 @@ defined('_JEXEC') or die('Restricted access');
 jimport('joomla.application.component.view');
 
 /**
- * HTML View class for the HelloWorld Component
+ * HTML View class
  */
-class MouflaViewMoufla extends JView
+class MouflaViewMoufla extends JViewLegacy
 {
     // Overwriting JView display method
     function display($tpl = null) {
