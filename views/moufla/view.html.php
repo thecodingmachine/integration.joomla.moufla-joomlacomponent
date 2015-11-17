@@ -18,7 +18,10 @@ class MouflaViewMoufla extends JViewLegacy
         // Let's get the response of Mouf through the Joomla's input
         $input = JFactory::getApplication()->input;
         $htmlResponse = $input->getRaw("response");
-        $htmlResponse->sendContent();
+
+
+        $emitter = new \Zend\Diactoros\Response\SapiEmitter();
+        $emitter->emit($htmlResponse);
 
         // If the request was a Json Request, you should kill the app
         if (!is_null($input->get("mouflaJson"))
