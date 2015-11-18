@@ -7,7 +7,7 @@ defined('_JEXEC') or die('Restricted access');
 jimport('joomla.application.component.controller');
 
 // Get an instance of the controller prefixed by Moufla
-$controller = JController::getInstance('Moufla');
+$controller = JControllerLegacy::getInstance('Moufla');
 
 // Perform the Request task
 $input = JFactory::getApplication()->input;

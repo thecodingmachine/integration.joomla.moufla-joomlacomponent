@@ -9,16 +9,19 @@ defined('_JEXEC') or die('Restricted access');
 jimport('joomla.application.component.view');
 
 /**
- * HTML View class for the HelloWorld Component
+ * HTML View class
  */
-class MouflaViewMoufla extends JView
+class MouflaViewMoufla extends JViewLegacy
 {
     // Overwriting JView display method
     function display($tpl = null) {
         // Let's get the response of Mouf through the Joomla's input
         $input = JFactory::getApplication()->input;
         $htmlResponse = $input->getRaw("response");
-        $htmlResponse->sendContent();
+
+
+        $emitter = new \Zend\Diactoros\Response\SapiEmitter();
+        $emitter->emit($htmlResponse);
 
         // If the request was a Json Request, you should kill the app
         if (!is_null($input->get("mouflaJson"))
